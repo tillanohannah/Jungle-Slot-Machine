@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jungle Treasure Slot Machine - Spin the reels and uncover riches deep in the jungle canopy!">
+    <title>Slot Machine</title>
+
+    <!-- Google Fonts - Trade Winds for an adventurer feel, Baloo 2 for playful display, Nunito for readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== LOADING SCREEN ==================== -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <h2 class="loader-title">Jungle Treasure</h2>
+            <p class="loader-subtitle">Clearing a path through the vines...</p>
+        </div>
+    </div>
+
+    <div id="stars-container" class="stars-container" aria-hidden="true"></div>
+
+    <!-- ==================== CONFETTI CONTAINER ==================== -->
+    <div id="confetti-container" class="confetti-container" aria-hidden="true"></div>
+
+    <!-- ==================== MAIN WRAPPER ==================== -->
+    <div class="main-wrapper">
+
+        <!-- ==================== HEADER ==================== -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">🌴</span>
+                Jungle Treasure
+                <span class="title-icon">💰</span>
+            </h1>
+            <h2 class="title-slot">Slot Machine</h2>
+            <p class="subtitle">"Spin the reels and uncover riches deep in the jungle!"</p>
+        </header>
+
+        <!-- ==================== COINS DISPLAY ==================== -->
+        <div class="coins-display">
+            <div class="coins-inner">
+                <span class="coins-icon">🪙</span>
+                <span class="coins-label">COINS</span>
+                <span id="coins-amount" class="coins-amount">100</span>
+            </div>
+            <div class="coins-cost">
+                <span>Cost per spin: <strong>10 coins</strong></span>
+            </div>
+        </div>
+
+        <!-- ==================== SLOT MACHINE CARD ==================== -->
+        <div class="slot-machine-card">
+
+            <!-- Result Message -->
+            <div id="result-message" class="result-message hidden">
+                <span id="result-text">Spin to play!</span>
+            </div>
+
+            <!-- Slot Reels Container -->
+            <div class="reels-container">
+                <!-- Reel 1 -->
+                <div id="reel-box-1" class="reel-box">
+                    <div class="reel-glow"></div>
+                    <img id="reel-1" class="reel-image" src="image1.png" alt="Slot Reel 1">
+                </div>
+
+                <!-- Reel 2 -->
+                <div id="reel-box-2" class="reel-box">
+                    <div class="reel-glow"></div>
+                    <img id="reel-2" class="reel-image" src="image2.png" alt="Slot Reel 2">
+                </div>
+
+                <!-- Reel 3 -->
+                <div id="reel-box-3" class="reel-box">
+                    <div class="reel-glow"></div>
+                    <img id="reel-3" class="reel-image" src="image3.png" alt="Slot Reel 3">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="spin-btn" class="btn btn-spin" title="Spin the reels (Spacebar)">
+                    <span class="btn-text">SPIN</span>
+                </button>
+                <button id="auto-spin-btn" class="btn btn-auto" title="Auto spin 5 times">
+                    <span class="btn-text">AUTO SPIN (5x)</span>
+                </button>
+                <button id="reset-btn" class="btn btn-reset" title="Reset the game">
+                    <span class="btn-text">RESET</span>
+                </button>
+            </div>
+
+            <!-- Game Over Overlay -->
+            <div id="game-over" class="game-over hidden">
+                <div class="game-over-content">
+                    <h2>🐍 GAME OVER</h2>
+                    <p>No coins remaining.</p>
+                    <button id="game-over-reset" class="btn btn-spin">PLAY AGAIN</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== BONUS CONTROLS ==================== -->
+        <div class="bonus-controls">
+            <button id="lucky-spin-btn" class="btn btn-lucky" title="Lucky Spin costs 25 coins but guarantees at least a match!">
+                <span class="btn-icon">🍀</span>
+                <span class="btn-text">LUCKY SPIN (25🪙)</span>
+            </button>
+            <button id="dark-mode-btn" class="btn btn-toggle" title="Toggle day/night mode">
+                <span class="btn-icon">🌙</span>
+                <span class="btn-text">NIGHT MODE</span>
+            </button>
+            </button>
+            <button id="fullscreen-btn" class="btn btn-toggle" title="Toggle fullscreen">
+                <span class="btn-icon">⛶</span>
+                <span class="btn-text">FULLSCREEN</span>
+            </button>
+        </div>
+
+
+
+        <!-- ==================== RECENT RESULTS ==================== -->
+        <div class="history-panel">
+            <h3 class="panel-title">🕐 Recent Results</h3>
+            <div id="history-list" class="history-list">
+                <p class="history-empty">No spins yet. Start playing!</p>
+            </div>
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer">
+            <p class="footer-title">Created by:</p>
+            <p class="footer-name">Hannah A. Tillano</p>
+            <p class="footer-name">Sharmaine A. Jacob</p>
+            <p class="footer-info">FAB-BSIT3-03</p>
+            <p class="footer-info">Project:Slot Machine</p>
+            <p class="footer-info">Year: 2026</p>
+            <p class="footer-copyright">© 2026 Jungle Treasure. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+    <!-- END main-wrapper -->
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
